@@ -1,0 +1,22 @@
+<div class="list">
+<ul class="mission">
+	<li *ngFor="let mission of missions" (click)="onSelect(mission)">
+		<span class="badge">{{mission.id}}</span> {{mission.name}}
+	</li>
+</ul> 
+</div>
+
+<div class="block">
+
+	<div *ngIf="selectedMission">
+		<h2>{{ selectedMission.name}}</h2>
+		<div><span>name: </span>{{selectedMission.name}}</div>
+		<div><span>description: </span>{{selectedMission.description}}</div>
+		<div><span>difficulty: </span>{{selectedMission.difficulty | difficulty}}</div>
+		<div><span>status: </span>{{selectedMission.status}}</div>
+
+		
+    
+	</div>
+	
+</div>

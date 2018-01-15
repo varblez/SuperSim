@@ -1,0 +1,16 @@
+div.list{
+	float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+div.block{
+	margin-left: 170px;
+	max-width: 320px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+div.exit{
+	float: right;
+}
