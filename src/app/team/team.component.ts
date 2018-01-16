@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
-import {TEAM } from '../team';
+import { TEAM } from '../team';
+
 
 @Component({
   selector: 'app-team',
@@ -11,6 +12,7 @@ import {TEAM } from '../team';
 export class TeamComponent implements OnInit {
 	team = TEAM;
 	selectedHero: Hero;
+	
 	
 	onSelect(hero: Hero): void {
 		this.selectedHero = hero;

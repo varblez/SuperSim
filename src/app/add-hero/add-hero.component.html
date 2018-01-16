@@ -1,3 +1,18 @@
 <h3> Assign Hero</h3>
 
-<input #searchBox id="search-box" (keyup)="search(searchBox.value)"/>
+<ul class="team">
+	<li *ngFor="let hero of team" (click)="addToMission(hero)">
+		
+			{{hero.name}}
+		
+	</li>
+</ul>
+
+<div>
+	<ul class="assigned">
+		<li *ngFor="let hero of assigned" (click)="removeFromMission(hero)">
+			{{hero.name}}
+		</li>
+	</ul>
+	<button (click)="run()">Run Job</button>
+</div>
