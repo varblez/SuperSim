@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import {TEAM } from '../team';
+import { MissionComponent } from '../mission/mission.component';
 import { MissionService } from '../mission.service';
 
 @Component({
@@ -10,7 +11,6 @@ import { MissionService } from '../mission.service';
 })
 export class AddHeroComponent implements OnInit {
 	team = TEAM;
-	dropTeam = this.team;
 	selectedHero: Hero;
 	assigned = this.team.slice();
   constructor() { }

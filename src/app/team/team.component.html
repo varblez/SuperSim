@@ -1,23 +1,56 @@
-<div class="list">
-<ul class="heroes">
-	<li *ngFor="let hero of team" (click)="onSelect(hero)">
-		<span class="badge">{{hero.id}}</span> {{hero.name}}
-	</li>
-</ul>
+<nav>
+	<a (click)="setTab('team')">Team</a>
+	<a (click)="setTab('Recruitment')">Recruitment</a>
+</nav>
+<div *ngIf="curTab=='team'">
+	
+	<div class="list">
+	<ul class="heroes">
+		<li *ngFor="let hero of team" (click)="onSelectTeam(hero)">
+			<span class="badge">{{hero.id}}</span> {{hero.name}}
+		</li>
+	</ul>
+	</div>
+
+
+	<div class="block">
+
+		<div *ngIf="selectedHeroTeam">
+			<h2>{{ selectedHeroTeam.name}} Profile</h2>
+			<div><span>name: </span>{{selectedHeroTeam.name}}</div>
+			<div><span>classification: </span>{{selectedHeroTeam.classification}}</div>
+			<div><span>reputation: </span>{{selectedHeroTeam.reputation}}</div>
+			<div><span>experience: </span>{{selectedHeroTeam.experience}}</div>
+			<div><span>attribute: </span>{{selectedHeroTeam.attribute}}</div>
+			<div><span>exhaustion: </span>{{selectedHeroTeam.exhaustion}}%</div>
+			<div><span>status: </span>{{selectedHeroTeam.status}}</div>
+		</div>
+	</div>
 </div>
+<!--####################-->
+<div *ngIf="curTab=='Recruitment'">
+	
+	<div class="list">
+	<ul class="heroes">
+		<li *ngFor="let hero of recruits" (click)="onSelectRecruit(hero)">
+			<span class="badge">{{hero.id}}</span> {{hero.name}}
+		</li>
+	</ul>
+	</div>
 
 
-<div class="block">
+	<div class="block">
 
-<div *ngIf="selectedHero">
-  <h2>{{ selectedHero.name}} Profile</h2>
-  <div><span>name: </span>{{selectedHero.name}}</div>
-  <div><span>classification: </span>{{selectedHero.classification}}</div>
-  <div><span>reputation: </span>{{selectedHero.reputation}}</div>
-  <div><span>experience: </span>{{selectedHero.experience}}</div>
-  <div><span>attribute: </span>{{selectedHero.attribute}}</div>
-  <div><span>exhaustion: </span>{{selectedHero.exhaustion}}%</div>
-  <div><span>status: </span>{{selectedHero.status}}</div>
+		<div *ngIf="selectedHeroRecruit">
+			<h2>{{ selectedHeroRecruit.name}} Profile</h2>
+			<div><span>name: </span>{{selectedHeroRecruit.name}}</div>
+			<div><span>classification: </span>{{selectedHeroRecruit.classification}}</div>
+			<div><span>reputation: </span>{{selectedHeroRecruit.reputation}}</div>
+			<div><span>experience: </span>{{selectedHeroRecruit.experience}}</div>
+			<div><span>attribute: </span>{{selectedHeroRecruit.attribute}}</div>
+			<div><span>exhaustion: </span>{{selectedHeroRecruit.exhaustion}}%</div>
+			<div><span>status: </span>{{selectedHeroRecruit.status}}</div>
+			<button (click)="addToTeam(hero)">Recruit</button>
+		</div>
+	</div>
 </div>
-</div>
-

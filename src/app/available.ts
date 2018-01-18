@@ -1,5 +1,5 @@
 import { Hero } from './hero';
 
-export const TEAM: Hero[] = [
+export const AVAILABLE: Hero[] = [
 	
 ];

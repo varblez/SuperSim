@@ -10,6 +10,7 @@ div.block{
     border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
+	
 }
 .list {
   margin: 0 0 2em 0;
@@ -43,4 +44,29 @@ div.block{
   top: -4.5px;
   height: 1.9em;
   margin-right: .8em;
+}
+
+.team{
+	min-width: 100px;
+	min-height: 100px;
+	float: left;
+	margin-top: 15px;
+	outline: 1px solid black;
+	
+}
+.team li{
+	padding: 10px;
+}
+.assigned{
+	min-width: 100px;
+	min-height: 100px;
+	float: right;
+	outline: 1px solid black;
+}
+.assigned li{
+	padding: 10px;
+}
+button {
+	position: absolute;
+	left: 350px;
 }

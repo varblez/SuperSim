@@ -15,8 +15,32 @@
 		<div><span>difficulty: </span>{{selectedMission.difficulty | difficulty}}</div>
 		<div><span>status: </span>{{selectedMission.status}}</div>
 
-		<app-add-hero></app-add-hero>
+		<!--<app-add-hero></app-add-hero>-->
+		
+		<div>
+			<h3> Assign Hero</h3>
+
+			<ul class="team">
+				<li *ngFor="let hero of available" (click)="addToMission(hero)">
+		
+					{{hero.name}}
+		
+				</li>
+			</ul>
+
+			<div>
+				<ul class="assigned">
+					<li *ngFor="let hero of selectedMission.assignedHeroes" (click)="removeFromMission(hero)">
+						{{hero.name}}
+					</li>
+				</ul>
+				
+			</div>
+		</div>
     
 	</div>
 	
+	
 </div>
+
+<button (click)="run()">Run Jobs</button>
