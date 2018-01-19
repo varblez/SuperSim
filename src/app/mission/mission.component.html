@@ -19,7 +19,8 @@
 		
 		<div>
 			<h3> Assign Hero</h3>
-
+			<div class="avail">
+			<p>Available Heroes</p>
 			<ul class="team">
 				<li *ngFor="let hero of available" (click)="addToMission(hero)">
 		
@@ -27,8 +28,10 @@
 		
 				</li>
 			</ul>
+			</div>
 
-			<div>
+			<div  class="comit">
+				<p>Commited Heroes</p>
 				<ul class="assigned">
 					<li *ngFor="let hero of selectedMission.assignedHeroes" (click)="removeFromMission(hero)">
 						{{hero.name}}

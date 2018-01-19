@@ -50,17 +50,25 @@ div.block{
 	min-width: 100px;
 	min-height: 100px;
 	float: left;
-	margin-top: 15px;
+	margin-top: -5px;
 	outline: 1px solid black;
 	
 }
 .team li{
 	padding: 10px;
 }
+.avail{
+	float: left;
+}
+.comit{
+	float: right;
+}
+
 .assigned{
 	min-width: 100px;
 	min-height: 100px;
 	float: right;
+	margin-top: -5px;
 	outline: 1px solid black;
 }
 .assigned li{

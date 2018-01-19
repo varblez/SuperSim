@@ -4,6 +4,7 @@ import { Hero } from '../hero';
 import { TEAM } from '../team';
 import { RECRUITS } from '../recruits';
 import { AVAILABLE } from '../available';
+import { COMPANY } from '../company';
 
  
 @Component({
@@ -15,9 +16,11 @@ export class TeamComponent implements OnInit {
 	team = TEAM;
 	recruits = RECRUITS;
 	available = AVAILABLE;
+	company = COMPANY;
 	selectedHeroTeam: Hero;
 	selectedHeroRecruit: Hero;
 	curTab = 'team';
+	
 	
 	onSelectTeam(hero: Hero): void {
 		this.selectedHeroTeam = hero;
@@ -38,13 +41,16 @@ export class TeamComponent implements OnInit {
 	}
 	
 	addToTeam(hero: Hero): void {
-		console.log(hero);
-		this.team.push(this.selectedHeroRecruit);
-		this.available.push(this.selectedHeroRecruit);
-		this.recruits.splice(this.recruits.indexOf(this.selectedHeroRecruit),1);
-		this.selectedHeroRecruit = null;
-		this.sortLists();
-		console.log(this.selectedHeroRecruit);
+		if( this.company.money>=1000){
+			console.log(hero);
+			this.team.push(this.selectedHeroRecruit);
+			this.available.push(this.selectedHeroRecruit);
+			this.recruits.splice(this.recruits.indexOf(this.selectedHeroRecruit),1);
+			this.selectedHeroRecruit = null;
+			this.sortLists();
+			console.log(this.selectedHeroRecruit);
+			this.company.money+= -1000;
+		}
 	}
 	
 	sortLists(): void {

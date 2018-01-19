@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CurrencyPipe } from '@angular/common';
+import { COMPANY } from '../company';
 
 @Component({
   selector: 'app-hq',
@@ -8,13 +9,13 @@ import { CurrencyPipe } from '@angular/common';
   styleUrls: ['./hq.component.css']
 })
 export class HqComponent implements OnInit {
-
+	company = COMPANY;
   constructor() { }
 
   ngOnInit() {
   }
   
-  teamName = "The Extream"
-  budget = 50000
+  teamName = this.company.name;
+  budget = this.company.money;
 
 }

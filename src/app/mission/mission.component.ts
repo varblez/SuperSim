@@ -34,7 +34,8 @@ export class MissionComponent implements OnInit {
 				
 			}
 		}
-				this.sortLists();
+		this.sortLists();
+		this.team[this.team.indexOf(hero)].status = 'commited to '+this.selectedMission.name;
 
 		
 		
@@ -49,6 +50,8 @@ export class MissionComponent implements OnInit {
 		}
 		this.available.push(hero);
 		this.sortLists();
+		
+		this.team[this.team.indexOf(hero)].status = 'free';
 		
 	}
 	run(): void {
